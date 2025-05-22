@@ -1,0 +1,50 @@
+print("welcome to calculator")
+
+def add(n1,n2):
+  return n1+n2
+
+def deduct(n1,n2):
+  return n1-n2
+
+def multiply(n1,n2):
+  return n1*n2
+
+def divide(n1,n2):
+  return n1/n2
+  
+operator_dictionary = {
+  "+": add,
+  "-": deduct,
+  "*": multiply,
+  "/": divide,}
+
+option = "yes"
+n1 = float(input("enter number: "))
+while option == "yes":
+  operator = input("select an operator:""""
+  +
+  -
+  *
+  /
+  """)
+  n2 = float(input("enter 2nd number: "))
+  
+  print(f"{n1} {operator} {n2} = {operator_dictionary[operator](n1,n2)}")
+    
+  answer = operator_dictionary[operator](n1,n2)
+  
+  question = input(f"would like to continue with {answer}, yes or no: ")
+ 
+  if question == "yes":
+    n1 = answer
+  elif question == "no":
+    print("\n" * 30)
+    print("calculator cleared")
+    n1 = float(input("enter 1st number: "))
+  else:   
+    print("undefined input")
+    option = "no"
+    
+
+    
+print("restart the code again to operate with calculator")
