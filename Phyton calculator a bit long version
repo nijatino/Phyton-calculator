@@ -1,0 +1,68 @@
+print("welcome to calculater")
+n1 = float(input("enter number: "))
+operator = input("select an operator:""""
++
+-
+*
+/
+""")
+n2 = float(input("enter number: "))
+question = "yes"
+question_ = "yes"
+
+def add(n1,n2):
+  return n1+n2
+
+def deduct(n1,n2):
+  return n1-n2
+
+def multiply(n1,n2):
+  return n1*n2
+
+def divide(n1,n2):
+  return n1/n2
+b = 0
+a = 0
+while question_ == "yes":
+
+  if operator == "+":
+    a = (add(n1,n2))
+    print(add(n1,n2))
+
+
+  elif operator == "-":
+    a = (deduct(n1,n2))
+    print(deduct(n1,n2))
+
+  elif operator == "*":
+    a = (multiply(n1,n2))
+    print(multiply(n1,n2))
+
+  elif operator == "/":
+    a = (divide(n1,n2))
+    print(divide(n1,n2))
+  b = a
+
+  question = input(f"want to continue with {a}? yes or no: ")
+  if question == "yes":
+    n1 = b
+    operator = input("select an operator:""""
+    +
+    -
+    *
+    /
+    """)
+    n2 = float(input("enter number: "))
+  elif question == "no":
+    b = 0
+    n1 = float(input("calculator cleared, enter number: "))
+    operator = input("select an operator:""""
+    +
+    -
+    *
+    /
+    """)
+    n2 = float(input("enter number: "))
+  else:
+    print("invalid command")
+    question_ = "no"
