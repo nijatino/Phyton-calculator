@@ -48,14 +48,15 @@ while sum_deck_player < 21 and game:
         black_jack = False
         comparison = False
       elif sum_deck_player == 21:
-        print("You won")
+        print(f"player's deck: {player} and the sum is {sum_deck_player}")
+        print("You hit the 21! You won")
         black_jack = False
         comparison = False
       else:
         print(f"player's deck: {player} and the sum is {sum_deck_player}")
+  
 
-
-if sum_deck_dealer > 16:
+if sum_deck_dealer > 16 and sum_deck_player < sum_deck_dealer:
   black_jack = False
   
 if sum_deck_dealer > 21 and 11 in dealer:
@@ -63,10 +64,10 @@ if sum_deck_dealer > 21 and 11 in dealer:
   dealer.append(1)
   sum_deck_dealer = sum(dealer)
 
-if black_jack:
-  print(f"dealer reveals his deck: {dealer} and the sum is {sum_deck_dealer}")
+
+print(f"dealer reveals his deck: {dealer} and the sum is {sum_deck_dealer}")
   
-while black_jack:
+while black_jack and sum_deck_dealer < 17:
     for i in range(1):
       dealer.append(random.choice(deck))
       sum_deck_dealer = sum(dealer)
