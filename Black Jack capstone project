@@ -2,7 +2,6 @@ import random
 deck = [11,2,3,4,5,6,7,8,9,10,10,10,10]
 print("Welcome to blackjack")
 
-
 player = []
 
 dealer = []
@@ -14,9 +13,6 @@ sum_deck_dealer = sum(dealer)
 
 print(f"dealer's first card is {dealer[0]}")    
     
-    
-sum_deck_dealer = sum(dealer)
-
 for i in range(2):
   player.append(random.choice(deck))
 
@@ -45,7 +41,6 @@ while sum_deck_player < 21 and game:
 if black_jack:
   print(f"dealer reveals his deck: {dealer} and the sum is {sum_deck_dealer}")
 
-
 if sum_deck_dealer > 16:
   black_jack = False
   
@@ -58,7 +53,6 @@ while black_jack and sum_deck_dealer < 17:
         black_jack = False
         comparison = False
         print("Dealer is busted, you win")
-
 
 while comparison:
   if sum_deck_player > sum_deck_dealer:
