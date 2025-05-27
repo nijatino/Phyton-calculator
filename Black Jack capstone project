@@ -1,0 +1,85 @@
+import random
+deck = [11,2,3,4,5,6,7,8,9,10,10,10,10]
+print("Welcome to blackjack")
+
+
+player = []
+
+dealer = []
+
+for i in range(2):
+  dealer.append(random.choice(deck))
+
+sum_deck_dealer = sum(dealer)
+
+print(f"dealer's first card is {dealer[0]}")    
+    
+    
+sum_deck_dealer = sum(dealer)
+
+for i in range(2):
+  player.append(random.choice(deck))
+
+game = True
+black_jack = True
+comparison = True
+sum_deck_player = sum(player)
+print(f"player's deck: {player} and the sum is {sum_deck_player}")
+
+
+while sum_deck_player < 21 and game:
+  choice = input("would you like to hit? yes or no: ")
+  if choice == "no":
+    game = False
+  elif choice == "yes":
+    for i in range(1):
+      player.append(random.choice(deck))
+      sum_deck_player = sum(player)
+      print(f"player's deck: {player} and the sum is {sum_deck_player}")
+      if sum_deck_player > 21:
+        print("you busted")
+        game = False
+        black_jack = False
+        comparison = False
+
+if black_jack:
+  print(f"dealer reveals his deck: {dealer} and the sum is {sum_deck_dealer}")
+
+
+if sum_deck_dealer > 16:
+  black_jack = False
+  
+while black_jack and sum_deck_dealer < 17:
+    for i in range(2):
+      dealer.append(random.choice(deck))
+      sum_deck_dealer = sum(dealer)
+      print(f"dealer hit the card: {dealer} and the sum is {sum_deck_dealer}")
+      if sum_deck_dealer > 21:
+        black_jack = False
+        comparison = False
+        print("Dealer is busted, you win")
+
+
+while comparison:
+  if sum_deck_player > sum_deck_dealer:
+    comparison = False
+    print("Player won")
+  elif sum_deck_dealer > sum_deck_player:
+    comparison = False
+    print("Dealer won")
+  elif sum_deck_player == sum_deck_dealer:
+    print("Draw")
+    comparison = False
+        
+
+
+    
+
+    
+
+
+    
+
+    
+   
+    
